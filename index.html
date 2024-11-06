@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lingo Game - LingoRush</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Hamburger Menu -->
+    <div class="hamburger" onclick="openNav()">☰</div>
+
+    <!-- Sidebar -->
+    <div id="mySidebar" class="sidebar">
+        <a href="javascript:void(0)" class="close-btn" onclick="closeNav()">&times;</a>
+        <a href="#">Dark/Light Mode</a>
+        <button onclick="toggleDarkMode()">Toggle Dark/Light Mode</button>
+        
+        <a href="#">Game Difficulty</a>
+        <select id="difficulty-level">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+        </select>
+
+        <a href="#">Sound Settings</a>
+        <label for="volume">Volume:</label>
+        <input type="range" id="volume" min="0" max="1" step="0.1" value="1">
+        <button id="mute-btn">Mute</button>
+
+        <a href="#">Language</a>
+        <select id="language-select">
+            <option value="en">English</option>
+            <option value="nl">Dutch</option>
+            <option value="de">German</option>
+            <option value="es">Spanish</option>
+        </select>
+
+        <a href="#">Reset Progress</a>
+        <button onclick="resetGame()">Reset Game</button>
+    </div>
+
+    <!-- Main content -->
+    <header>
+        <h1>LingoRush</h1>
+    </header>
+    <div class="game-container" id="game-container">
+        <p>Green = Correct, Yellow = Wrong place</p>
+        <div class="grid" id="game-board"></div>
+        <div class="input-container">
+            <input type="text" id="guess-input" maxlength="5" placeholder="Type your guess!" autofocus />
+            <button id="guess-btn">Submit</button>
+        </div>
+        <div class="replay-container hidden" id="replay-container">
+            <p id="correct-word"></p>
+            <button id="replay-btn">Play Again</button>
+        </div>
+    </div>
+
+    <!-- Footer section -->
+    <footer>
+        <p>© 2024 LingoRush | All rights reserved | Designed with 💖 by LingoRush Team:<br> Abderazzak, Hussein, Nihad, Mehan, Vanesa</p>
+    </footer>
+
+    <audio id="correct-sound" src="file:///C:/Users/Acer/Desktop/correct.mp3.mp3"></audio>
+    <audio id="incorrect-sound" src="file:///C:/Users/Acer/Desktop/Lingo/incorrect.mp3.mp3"></audio>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
